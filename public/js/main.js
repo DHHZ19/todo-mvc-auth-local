@@ -68,10 +68,10 @@ async function markIncomplete(){
     }
 }    
 let startTiming
-document.querySelector('button').addEventListener('click', () => {
+document.querySelector('#timerSubmit').addEventListener('click', () => {
     startTiming = document.querySelector('#time').value
     console.log(startTiming)
-    localStorage.setItem('timer', 12)
+    localStorage.setItem('timer', startTiming)
    
 })
 
