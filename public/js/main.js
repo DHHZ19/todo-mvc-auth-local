@@ -66,4 +66,25 @@ async function markIncomplete(){
     }catch(err){
         console.log(err)
     }
-}
+}    
+let startTiming
+document.querySelector('button').addEventListener('click', () => {
+    startTiming = document.querySelector('#time').value
+    console.log(startTiming)
+    localStorage.setItem('timer', 12)
+   
+})
+
+console.log(localStorage.getItem('timer'))
+
+ let time = +localStorage.getItem('timer') * 60;
+ const count = document.querySelector('#countdown')
+ setInterval(updateTimer, 1000)
+ function updateTimer(){
+    const minutes = Math.floor(time/60)
+    let seconds = time % 60; 
+    seconds = seconds < 10 ? '0' + seconds : seconds
+    count.innerHTML = `${minutes}:${seconds}`
+    time--
+ }
+

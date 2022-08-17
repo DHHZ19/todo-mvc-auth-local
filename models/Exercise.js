@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 
-const TodoSchema = new mongoose.Schema({
+const ExerciseSchema = new mongoose.Schema({
   todo: {
     type: String,
     required: true,
@@ -12,7 +12,10 @@ const TodoSchema = new mongoose.Schema({
   userId: {
     type: String,
     required: true
+  },
+  timeForWorkout: {
+    type: Number,
   }
 })
 
-module.exports = mongoose.model('Todo', TodoSchema)
+module.exports = mongoose.model('Exercise', ExerciseSchema)
