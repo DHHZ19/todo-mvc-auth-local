@@ -46,9 +46,13 @@ main{
   .button_accept:hover{
     background: #3bec34;
   }
-li.todoItem{
+  li.todoItem {
+    list-style-type: none;
+    /** the image will be vertically aligned in the center **/
+    background: url('../images/workoutLIst.svg') left center no-repeat; 
+    /** move the text to the right **/
     margin: 10px;
-    list-style-image: url("../images/icons8-workout.svg");
+    padding-left: 50px; 
 }
 #countdown{
     font-size: xx-large;
