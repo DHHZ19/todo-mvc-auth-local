@@ -1,10 +1,64 @@
-h1{
-    color: red;
+html{
+    font-size: 16px;
 }
+
+h1{
+    color: blue;
+}
+
 .completed{
     text-decoration: line-through;
     color: gray;
 }
 .not{
     text-decoration: underline;
+}
+main{
+   display:flex;
+   align-items:center;
+   flex-direction: column;
+}
+.del{
+    border: solid 2px black;
+    margin: 10px;
+    border-radius: 5px;
+    background: red;
+    color: white;
+}
+.del:hover{
+    cursor: pointer;
+}
+.button_accept {
+    width: 15%;
+    height: 55px;
+    border: none;
+    background: #19d412;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: 500;
+    font-family: "Source Sans Pro", sans-serif;
+    box-shadow: 3px 10px 20px 0px rgba(35, 100, 210, 0.3);
+    color: #fff;
+    margin-top: 5%;
+    cursor: pointer;
+   text-overflow: ellipsis;
+  }
+  .button_accept:hover{
+    background: #3bec34;
+  }
+li.todoItem{
+    margin: 10px;
+    list-style-image: url("../images/icons8-workout.svg");
+}
+#countdown{
+    font-size: xx-large;
+}
+
+input[type="submit"]{
+    height: 30px;
+    width: 15vw;
+    background-color: aqua;
+    border: solid black 3px;
+    margin: 3px;
+    cursor: pointer;
 }
