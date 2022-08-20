@@ -7,6 +7,8 @@
     <title>Workout Tracker!</title>
     <!--CDN Materialize-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css" integrity="sha512-oHDEc8Xed4hiW6CxD7qjbnI+B07vDdX7hEPTvn9pSZO1bcRqHp8mj9pyr+8RVC2GmtEfI2Bi9Ke9Ass0as+zpg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <!--Google icons-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
@@ -16,15 +18,27 @@
     <header>
         <a href="/logout">Logout</a>
     </header>
-    <main>
+    <main>  
     <h1>Tracking Workouts</h1>
-    <div class="timer"></div>
+    <div class="container">
+        <p id="time"><span id="second">00</span>:<span id="tens">00</span></p>
+        <button id="btn-start" class="timer__btn timer__btn--control timer__btn--start">
+            <span class="material-icons">play_arrow</span>  </button>
+        <button id="btn-stop" class="timer__btn timer__btn--control"><span class="material-icons">
+            pause
+            </span></button>
+        <button id="btn-reset" class="timer__btn timer__btn--control"><span class="material-icons">
+            restart_alt
+            </span></button>
+    </div>
    
     <ul>
     <% todos.forEach( el => { %>
             <li class='todoItem' data-id='<%=el._id%>'>
                 <span class='<%= el.completed === true ? 'completed' : 'not'%>'><%= el.todo %></span>
-                <span class='del'> Delete </span>
+                <span class="del" > <span class="material-icons">
+                    delete_sweep
+                    </span> </span>
             </li>
     <% }) %>    
     </ul>
@@ -37,6 +51,6 @@
     </form>
 </main>
     <script src="js/main.js"></script>
-    <script src="js/Timer.js"></script>
+    <script src="js/Timer.js"></script>    
 </body>
 </html>

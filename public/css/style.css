@@ -1,133 +1,129 @@
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
-html{
-    font-size: 16px;
-    font-family: 'Bebas Neue';
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+html {
+  font-family: "Bebas Neue";
 }
-body{
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-}
-
-.completed{
-    text-decoration: line-through;
-    color: gray;
-}
-.not{
-    text-decoration: underline;
-}
-main{
-   display:flex;
-   justify-content: center;
-   justify-self: center;
-   align-items:center;
-   flex-direction: column;
-   color: rgb(212, 8, 234) !important;
-   text-shadow:
-     /* White glow */
-     0 0 7px #fff,
-     0 0 10px #fff,
-     0 0 21px #fff; 
-   background-color:#00000011;
-   height: 90vh;
-   width: 45vw;
-   margin: 0 auto;
-}
-.del{
-    border: solid 2px black;
-    margin: 10px;
-    width: 20vw;
-    border-radius: 5px;
-    background: red;
-    color: white;
-}
-.del:hover{
-    cursor: pointer;
-}
-header{
-    width: 100%;
-    display: flex;
-    justify-content: flex-start;
-    margin-left: 8%;
-}
- 
-  .button_accept:hover{
-    background: #3bec34;
-  }
-  li.todoItem {
-    list-style-type: none;
-    font-size:x-large;
-    /** the image will be vertically aligned in the center **/
-    background: url('../images/workoutLIst.svg') left center no-repeat; 
-    /** move the text to the right **/
-    margin: 10px;
-    padding-left: 50px; 
-}
-#countdown{
-    font-size: xx-large;
+body {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 }
 
-input[type="submit"]{
-    height: 30px;
-    background-color: aqua;
-    border: solid black 3px;
-    margin: 3px;
-    cursor: pointer;
+.completed {
+  text-decoration: line-through;
+  color: gray;
+}
+.not {
+  text-decoration: underline;
+}
+main {
+  display: flex;
+  justify-content: center;
+  justify-self: center;
+  align-items: center;
+  flex-direction: column;
+  color: rgb(212, 8, 234) !important;
+  text-shadow:
+      /* White glow */ 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff;
+  background-color: #00000011;
+  height: 90vh;
+  width: 45vw;
+  margin: 0 auto;
+}
+.del:hover {
+  cursor: pointer;
+}
+header {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  margin-left: 8%;
 }
 
-.upperCase::first-letter{
-    text-transform: capitalize;
+.button_accept:hover {
+  background: #3bec34;
+}
+li.todoItem {
+  list-style-type: none;
+  font-size: x-large;
+  /** the image will be vertically aligned in the center **/
+  background: url("../images/workoutLIst.svg") left center no-repeat;
+  /** move the text to the right **/
+  margin: 10px;
+  padding-left: 50px;
+}
+#countdown {
+  font-size: xx-large;
 }
 
+input[type="submit"] {
+  height: 30px;
+  background-color: rgb(109, 163, 248);
+  border: solid black 3px;
+  margin: 3px;
+  cursor: pointer;
+}
+
+.upperCase::first-letter {
+  text-transform: capitalize;
+}
+.del {
+  margin: 10px;
+  width: 20vw;
+  font-size: larger;
+}
 /* 
-Mobile Speficic Query's
-*/
+  Mobile Speficic Query's
+  */
 
-@media screen and (max-width: 950px){
-    .button_accept{
-        width: 35%;
-    }
-    main{
-      width: 85vw;
-    }
+@media screen and (max-width: 950px) {
+  .button_accept {
+    width: 35%;
+  }
+  main {
+    width: 85vw;
+  }
 }
-
 
 /* Timer CSS */
 body {
-    background: #dddddd;
-    margin: 24px;
-  }
-  
-  .timer {
-    font-family: sans-serif;
-    display: inline-block;
-    padding: 24px 32px;
-    border-radius: 30px;
-    background: white;
-  }
-  
-  .timer__part {
-    font-size: 36px;
-    font-weight: bold;
-  }
-  
-  .timer__btn {
-    width: 50px;
-    height: 50px;
-    margin-left: 16px;
-    border-radius: 50%;
-    border: none;
-    color: white;
-    background: #8208e6;
-    cursor: pointer;
-  }
-  
-  .timer__btn--start {
-    background: #00b84c;
-  }
-  
-  .timer__btn--stop {
-    background: #ff0256;
-  }
-  /* Timer CSS */
+  background: #dddddd;
+  margin: 24px;
+}
+
+.timer {
+  font-family: sans-serif;
+  display: inline-block;
+  padding: 24px 32px;
+  border-radius: 30px;
+  background: white;
+}
+
+.timer__part {
+  font-weight: bold;
+}
+
+.timer__btn {
+  width: 50px;
+  height: 50px;
+  margin-left: 16px;
+  border-radius: 50%;
+  border: none;
+  color: white;
+  background: #8208e6;
+  cursor: pointer;
+}
+
+.timer__btn--start {
+  background: #00b84c;
+}
+
+.timer__btn--stop {
+  background: #ff0256;
+}
+/* Timer CSS */
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+}
