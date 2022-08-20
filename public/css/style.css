@@ -1,9 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 html{
     font-size: 16px;
+    font-family: 'Bebas Neue';
 }
-
-h1{
-    color: blue;
+body{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
 }
 
 .completed{
@@ -15,12 +18,25 @@ h1{
 }
 main{
    display:flex;
+   justify-content: center;
+   justify-self: center;
    align-items:center;
    flex-direction: column;
+   color: rgb(212, 8, 234) !important;
+   text-shadow:
+     /* White glow */
+     0 0 7px #fff,
+     0 0 10px #fff,
+     0 0 21px #fff; 
+   background-color:#00000011;
+   height: 90vh;
+   width: 45vw;
+   margin: 0 auto;
 }
 .del{
     border: solid 2px black;
     margin: 10px;
+    width: 20vw;
     border-radius: 5px;
     background: red;
     color: white;
@@ -28,26 +44,19 @@ main{
 .del:hover{
     cursor: pointer;
 }
-.button_accept {
-    width: 15%;
-    height: 55px;
-    border: none;
-    background: #19d412;
-    border-radius: 5px;
-    font-size: 1rem;
-    font-weight: 500;
-    font-family: "Source Sans Pro", sans-serif;
-    box-shadow: 3px 10px 20px 0px rgba(35, 100, 210, 0.3);
-    color: #fff;
-    margin-top: 5%;
-    cursor: pointer;
-   text-overflow: ellipsis;
-  }
+header{
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    margin-left: 8%;
+}
+ 
   .button_accept:hover{
     background: #3bec34;
   }
   li.todoItem {
     list-style-type: none;
+    font-size: larger;
     /** the image will be vertically aligned in the center **/
     background: url('../images/workoutLIst.svg') left center no-repeat; 
     /** move the text to the right **/
@@ -60,9 +69,65 @@ main{
 
 input[type="submit"]{
     height: 30px;
-    width: 15vw;
     background-color: aqua;
     border: solid black 3px;
     margin: 3px;
     cursor: pointer;
 }
+
+.upperCase::first-letter{
+    text-transform: capitalize;
+}
+
+/* 
+Mobile Speficic Query's
+*/
+
+@media screen and (max-width: 950px){
+    .button_accept{
+        width: 35%;
+    }
+    main{
+      width: 85vw;
+    }
+}
+
+
+/* Timer CSS */
+body {
+    background: #dddddd;
+    margin: 24px;
+  }
+  
+  .timer {
+    font-family: sans-serif;
+    display: inline-block;
+    padding: 24px 32px;
+    border-radius: 30px;
+    background: white;
+  }
+  
+  .timer__part {
+    font-size: 36px;
+    font-weight: bold;
+  }
+  
+  .timer__btn {
+    width: 50px;
+    height: 50px;
+    margin-left: 16px;
+    border-radius: 50%;
+    border: none;
+    color: white;
+    background: #8208e6;
+    cursor: pointer;
+  }
+  
+  .timer__btn--start {
+    background: #00b84c;
+  }
+  
+  .timer__btn--stop {
+    background: #ff0256;
+  }
+  /* Timer CSS */
