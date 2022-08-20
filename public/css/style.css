@@ -56,7 +56,7 @@ header{
   }
   li.todoItem {
     list-style-type: none;
-    font-size: larger;
+    font-size:x-large;
     /** the image will be vertically aligned in the center **/
     background: url('../images/workoutLIst.svg') left center no-repeat; 
     /** move the text to the right **/
