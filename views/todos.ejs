@@ -5,8 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Workout Tracker!</title>
-    <!--CDN Materialize-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css" integrity="sha512-oHDEc8Xed4hiW6CxD7qjbnI+B07vDdX7hEPTvn9pSZO1bcRqHp8mj9pyr+8RVC2GmtEfI2Bi9Ke9Ass0as+zpg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!--Font Awesome-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" 
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <!--Google icons-->
@@ -16,11 +17,23 @@
 </head>
 <body>
     <header>
-        <a href="/logout">Logout</a>
+      
     </header>
-    <main>  
+    <main>
+        <nav class="grey darken-3">
+            <div class="nav-wrapper container">
+                <a href="#!" class="brand-logo center">Workouts</a>
+                <a href="#" data-target="mobile-demo" class="sidenav-trigger show-on-large"><i class="fas fa-bars"></i></a>
+                <ul class="sidenav" id="mobile-demo">
+                    <li><a href="/logout">Logout</a></li> 
+                    <li><a href="/stories">Public Stories</a></li>
+                    <li><a href="/dashboard">Dashboard</a></li>
+                    <li><a href="/auth/logout">Logout</a></li>
+                </ul>
+            </div>
+        </nav>  
     <h1>Tracking Workouts</h1>
-    <div class="container">
+    <div class=".containerTimer">
         <p id="time"><span id="second">00</span>:<span id="tens">00</span></p>
         <button id="btn-start" class="timer__btn timer__btn--control timer__btn--start">
             <span class="material-icons">play_arrow</span>  </button>
@@ -52,5 +65,15 @@
 </main>
     <script src="js/main.js"></script>
     <script src="js/Timer.js"></script>    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ckeditor/4.14.1/ckeditor.js"
+        integrity="sha256-bEIQpI72w9NJuIVhTLFUF2/8uxl0u5800r8ddViuv+o=" crossorigin="anonymous"></script>
+        <script>
+            M.Sidenav.init(document.querySelector('.sidenav'))
+            M.FormSelect.init(document.querySelector('#status'))
+            CKEDITOR.replace('body', {
+                plugins: 'wysiwygarea, toolbar, basicstyles, link'
+            })
+        </script>
 </body>
 </html>

@@ -1,13 +1,23 @@
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
 html {
   font-family: "Bebas Neue";
+  width: 100%;
+}
+h1,
+h2,
+p {
+  text-align: center;
 }
 body {
   display: flex;
   justify-content: center;
   flex-direction: column;
 }
-
+form {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
 .completed {
   text-decoration: line-through;
   color: gray;
@@ -16,6 +26,7 @@ body {
   text-decoration: underline;
 }
 main {
+  font-size: 1.4rem;
   display: flex;
   justify-content: center;
   justify-self: center;
@@ -25,18 +36,12 @@ main {
   text-shadow:
       /* White glow */ 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff;
   background-color: #00000011;
-  height: 90vh;
+  height: 100%;
   width: 45vw;
   margin: 0 auto;
 }
 .del:hover {
   cursor: pointer;
-}
-header {
-  width: 100%;
-  display: flex;
-  justify-content: flex-start;
-  margin-left: 8%;
 }
 
 .button_accept:hover {
@@ -57,12 +62,15 @@ li.todoItem {
 
 input[type="submit"] {
   height: 30px;
-  background-color: rgb(109, 163, 248);
+  background-color: rgb(212, 8, 234);
   border: solid black 3px;
   margin: 3px;
+  color: whitesmoke;
   cursor: pointer;
 }
-
+.upperCase {
+  text-align: center;
+}
 .upperCase::first-letter {
   text-transform: capitalize;
 }
@@ -121,7 +129,7 @@ body {
   background: #ff0256;
 }
 /* Timer CSS */
-.container {
+.containerTimer {
   display: flex;
   align-items: center;
   justify-content: center;
