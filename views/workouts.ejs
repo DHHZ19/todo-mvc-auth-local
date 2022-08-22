@@ -1,13 +1,25 @@
 <%- include('./partials/head.ejs') %> 
     <%- include('./partials/header.ejs') %> 
-    <form action="/todos/ceateExerciseProfile" method="POST">
-      <input
+    <form class="addAnotherItem" action="/todos/ceateExerciseProfile" method="POST">
+      <input 
         type="text"
         placeholder="Enter Workout Title"
         name="exerciseTitle"
       />
       <input type="text" placeholder="Workout Item" name="exerciseItem" />
-      <input type="submit" />
+      <input  class="this" type="submit" />
     </form>
+    <input type="button" id="addAnotherItem" >
+    <script>
+      document.querySelector('#addAnotherItem').addEventListener('click', createInput)
+      function createInput(){        
+        const input = document.createElement('input')
+        input.type='text'
+        input.name="exerciseItem"
+        const beforeNode = document.querySelector('.this')
+        document.querySelector(".addAnotherItem").insertBefore(input, beforeNode)
+      }
+      
+    </script>
     <%- include('./partials/footer.ejs') %> 
 
