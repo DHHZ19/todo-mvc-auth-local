@@ -90,9 +90,6 @@ input[type="submit"] {
   color: whitesmoke;
   cursor: pointer;
 }
-.upperCase {
-  text-align: center;
-}
 .upperCase::first-letter {
   text-transform: capitalize;
 }

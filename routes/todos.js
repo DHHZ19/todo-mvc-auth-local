@@ -1,16 +1,20 @@
-const express = require('express')
-const router = express.Router()
-const todosController = require('../controllers/exercise') 
-const { ensureAuth, ensureGuest } = require('../middleware/auth')
+const express = require("express");
+const router = express.Router();
+const todosController = require("../controllers/exercise");
+const { ensureAuth, ensureGuest } = require("../middleware/auth");
 
-router.get('/', ensureAuth, todosController.getTodos)
+router.get("/", ensureAuth, todosController.getExercise);
 
-router.post('/createTodo', todosController.createTodo)
+router.get("/workouts", todosController.getWorkouts);
 
-router.put('/markComplete', todosController.markComplete)
+router.post("/createTodo", todosController.createExercise);
 
-router.put('/markIncomplete', todosController.markIncomplete)
+router.put("/markComplete", todosController.markComplete);
 
-router.delete('/deleteTodo', todosController.deleteTodo)
+router.put("/markIncomplete", todosController.markIncomplete);
 
-module.exports = router
+router.delete("/deleteTodo", todosController.deleteExercise);
+
+router.post("/ceateExerciseProfile", todosController.createExerciseProfile);
+
+module.exports = router;

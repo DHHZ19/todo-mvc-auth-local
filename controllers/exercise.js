@@ -1,55 +1,88 @@
-const Exercise = require('../models/Exercise')
-
+const Exercise = require("../models/Exercise");
+const ExerciseProfile = require("../models/ExerciseProfile");
 module.exports = {
-    getTodos: async (req,res)=>{
-        console.log(req.user)
-        try{
-            const todoItems = await Exercise.find({userId:req.user.id})
-            const itemsLeft = await Exercise.countDocuments({userId:req.user.id,completed: false})
-            res.render('todos.ejs', {todos: todoItems, left: itemsLeft, user: req.user})
-        }catch(err){
-            console.log(err)
-        }
-    },
-    createTodo: async (req, res)=>{
-        try{
-            await Exercise.create({todo: req.body.todoItem, completed: false, userId: req.user.id, timeForWorkout: req.body.timeForWorkout})
-            console.log('Todo has been added!')
-            res.redirect('/todos')
-        }catch(err){
-            console.log(err)
-        }
-    },
-    markComplete: async (req, res)=>{
-        try{
-            await Exercise.findOneAndUpdate({_id:req.body.todoIdFromJSFile},{
-                completed: true
-            })
-            console.log('Marked Complete')
-            res.json('Marked Complete')
-        }catch(err){
-            console.log(err)
-        }
-    },
-    markIncomplete: async (req, res)=>{
-        try{
-            await Exercise.findOneAndUpdate({_id:req.body.todoIdFromJSFile},{
-                completed: false
-            })
-            console.log('Marked Incomplete')
-            res.json('Marked Incomplete')
-        }catch(err){
-            console.log(err)
-        }
-    },
-    deleteTodo: async (req, res)=>{
-        console.log(req.body.todoIdFromJSFile)
-        try{
-            await Exercise.findOneAndDelete({_id:req.body.todoIdFromJSFile})
-            console.log('Deleted Todo')
-            res.json('Deleted It')
-        }catch(err){
-            console.log(err)
-        }
+  getExercise: async (req, res) => {
+    try {
+      const exerciseItems = await Exercise.find({ userId: req.user.id });
+      const itemsLeft = await Exercise.countDocuments({
+        userId: req.user.id,
+        completed: false,
+      });
+      res.render("todos.ejs", {
+        todos: exerciseItems,
+        left: itemsLeft,
+        user: req.user,
+      });
+    } catch (err) {
+      console.log(err);
     }
-}    
+  },
+  createExercise: async (req, res) => {
+    try {
+      await Exercise.create({
+        exercise: req.body.exercise,
+        completed: false,
+        userId: req.user.id,
+        timeForWorkout: req.body.timeForWorkout,
+      });
+      console.log("Todo has been added!");
+      res.redirect("/todos");
+    } catch (err) {
+      console.log(err);
+    }
+  },
+  markComplete: async (req, res) => {
+    try {
+      await Exercise.findOneAndUpdate(
+        { _id: req.body.todoIdFromJSFile },
+        {
+          completed: true,
+        }
+      );
+      console.log("Marked Complete");
+      res.json("Marked Complete");
+    } catch (err) {
+      console.log(err);
+    }
+  },
+  markIncomplete: async (req, res) => {
+    try {
+      await Exercise.findOneAndUpdate(
+        { _id: req.body.todoIdFromJSFile },
+        {
+          completed: false,
+        }
+      );
+      console.log("Marked Incomplete");
+      res.json("Marked Incomplete");
+    } catch (err) {
+      console.log(err);
+    }
+  },
+  deleteExercise: async (req, res) => {
+    console.log(req.body.todoIdFromJSFile);
+    try {
+      await Exercise.findOneAndDelete({ _id: req.body.todoIdFromJSFile });
+      console.log("Deleted Todo");
+      res.json("Deleted It");
+    } catch (err) {
+      console.log(err);
+    }
+  },
+  createExerciseProfile: async (req, res) => {
+    try {
+      await ExerciseProfile.create({
+        exerciseTitle: req.body.exerciseTitle,
+        exerciseItem: req.body.exerciseItem,
+        completed: false,
+        userId: req.user.id,
+        timeForWorkout: req.body.timeForWorkout,
+      });
+    } catch (error) {
+      console.error(error);
+    }
+  },
+  getWorkouts: async (req, res) => {
+    res.render("workouts.ejs");
+  },
+};
