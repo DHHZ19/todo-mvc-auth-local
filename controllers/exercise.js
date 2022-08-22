@@ -83,6 +83,19 @@ module.exports = {
     }
   },
   getWorkouts: async (req, res) => {
-    res.render("workouts.ejs");
+    try {
+      const exerciseItems = await Exercise.find({ userId: req.user.id });
+      const itemsLeft = await Exercise.countDocuments({
+        userId: req.user.id,
+        completed: false,
+      });
+      res.render("workouts.ejs", {
+        todos: exerciseItems,
+        left: itemsLeft,
+        user: req.user,
+      });
+    } catch (err) {
+      console.log(err);
+    }
   },
 };

@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
 html {
-  font-family: "Bebas Neue";
+  font-family: "Bebas Neue" !important;
   width: 100%;
 }
 h1,
@@ -11,7 +11,11 @@ p {
 p span {
   font-size: xx-large;
 }
+.nav-wrapper{
+  font-size: xx-large !important;
+}
 body {
+  font-family: "Bebas Neue" !important;
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -30,7 +34,7 @@ form {
 }
 
 main {
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   display: flex;
   justify-content: center;
   justify-self: center;
@@ -114,7 +118,6 @@ input[type="submit"] {
 /* Timer CSS */
 
 .timer {
-  font-family: sans-serif;
   display: inline-block;
   padding: 24px 32px;
   border-radius: 30px;
