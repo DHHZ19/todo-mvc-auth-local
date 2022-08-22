@@ -5,6 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Workout Tracker!</title>
+    <!--Normalize CSS-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css" integrity="sha512-oHDEc8Xed4hiW6CxD7qjbnI+B07vDdX7hEPTvn9pSZO1bcRqHp8mj9pyr+8RVC2GmtEfI2Bi9Ke9Ass0as+zpg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!--Font Awesome-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" 
     crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -17,21 +19,27 @@
 </head>
 <body>
     <header>
-      
-    </header>
-    <main>
         <nav class="grey darken-3">
             <div class="nav-wrapper container">
                 <a href="#!" class="brand-logo center">Workouts</a>
                 <a href="#" data-target="mobile-demo" class="sidenav-trigger show-on-large"><i class="fas fa-bars"></i></a>
                 <ul class="sidenav" id="mobile-demo">
+                    <li><div class="user-view">
+                        <div class="background">
+                          <img src="https://media.istockphoto.com/photos/gym-background-fitness-weight-equipment-on-empty-dark-floor-picture-id1213615970?k=20&m=1213615970&s=612x612&w=0&h=S2Ny5JNrAlcpZ_0mt76CKAwARqvJN5glvHpB9fD3DA0=">
+                        </div>
+                        <a href="#user"><img class="circle" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-CJx8LIHC6c0OfyEywvco82gUxvwPJd4cX27qPjxH&s"></a>
+                        <a href="#name"><span class="black-text name">John Doe</span></a>
+                        <a href="#email"><span class="black-text email">jdandturk@gmail.com</span></a>
+                      </div></li>
                     <li><a href="/logout">Logout</a></li> 
-                    <li><a href="/stories">Public Stories</a></li>
-                    <li><a href="/dashboard">Dashboard</a></li>
-                    <li><a href="/auth/logout">Logout</a></li>
+                    <li><a href="#">Workouts</a></li>
+                    <li><a href="">Dashboard</a></li>
                 </ul>
             </div>
         </nav>  
+    </header>
+    <main>    
     <h1>Tracking Workouts</h1>
     <div class=".containerTimer">
         <p id="time"><span id="second">00</span>:<span id="tens">00</span></p>
@@ -57,11 +65,13 @@
     </ul>
     
     <h2 class="upperCase"><%= user.userName %> has <%= left %> wokouts left to do.</h2>
+    <div class="input-field">
+        <form action="/todos/createTodo" method='POST'>
+            <input type="text" placeholder="Workout Item" name='todoItem'>
+            <input type="submit">
+        </form>
+    </div>
 
-    <form action="/todos/createTodo" method='POST'>
-        <input type="text" placeholder="Workout Item" name='todoItem'>
-        <input type="submit">
-    </form>
 </main>
     <script src="js/main.js"></script>
     <script src="js/Timer.js"></script>    
