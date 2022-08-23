@@ -16,13 +16,9 @@ p span {
 }
 body {
   font-family: "Bebas Neue" !important;
+  width: 100%;
+  min-height: 100vh;
   display: flex;
-  justify-content: center;
-  flex-direction: column;
-}
-form {
-  display: flex;
-  justify-content: center;
   flex-direction: column;
 }
 .completed {
@@ -155,4 +151,12 @@ input[type="submit"] {
   color: black;
   background: #8208e6;
   cursor: pointer;
+}
+form.addAnotherItem{
+justify-content: center;
+margin-top: auto;
+}
+section{
+  display: flex;
+  justify-content: center;
 }
