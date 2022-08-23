@@ -2,6 +2,14 @@
     <%- include('./partials/header.ejs') %> 
     <main>
       <h1>Save your favorite workouts for future use! </h1>
+      <% exerciseProfile.forEach( el => { %>
+            <li class='todoItem' data-id='<%=el._id%>'>
+                <span class='<%= el.completed === true ? 'completed' : 'not'%>'><%= el.exerciseItem.map(x => x) %></span>
+                <span class="del" > <span class="material-icons">
+                    delete_sweep
+                    </span> </span>
+            </li>
+    <% }) %>    
     <form class="addAnotherItem" action="/todos/ceateExerciseProfile" method="POST">
       <input 
         type="text"

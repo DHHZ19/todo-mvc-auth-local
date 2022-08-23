@@ -86,6 +86,7 @@ module.exports = {
   getWorkouts: async (req, res) => {
     try {
       const exerciseItems = await Exercise.find({ userId: req.user.id });
+      const exerciseProfileItems = await ExerciseProfile.find({ userId: req.user.id });
       const itemsLeft = await Exercise.countDocuments({
         userId: req.user.id,
         completed: false,
@@ -94,6 +95,7 @@ module.exports = {
         todos: exerciseItems,
         left: itemsLeft,
         user: req.user,
+        exerciseProfile: exerciseProfileItems,
       });
     } catch (err) {
       console.log(err);
