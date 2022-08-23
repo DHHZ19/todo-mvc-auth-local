@@ -78,6 +78,7 @@ module.exports = {
         userId: req.user.id,
         timeForWorkout: req.body.timeForWorkout,
       });
+      res.redirect('/todos/workouts')
     } catch (error) {
       console.error(error);
     }

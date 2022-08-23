@@ -9,17 +9,17 @@
       <input type="text" placeholder="Workout Item" name="exerciseItem" />
       <input  class="this" type="submit" />
     </form>
-    <input type="button" id="addAnotherItem" >
+    <input type="button" id="addAnotherItem" value="Add Another Workout">
     <script>
       document.querySelector('#addAnotherItem').addEventListener('click', createInput)
       function createInput(){        
         const input = document.createElement('input')
         input.type='text'
+        input.placeholder = 'Workout Item'
         input.name="exerciseItem"
         const beforeNode = document.querySelector('.this')
         document.querySelector(".addAnotherItem").insertBefore(input, beforeNode)
       }
-      
     </script>
     <%- include('./partials/footer.ejs') %> 
 
