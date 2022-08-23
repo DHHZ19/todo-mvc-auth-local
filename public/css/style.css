@@ -1,11 +1,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
 html {
   font-family: "Bebas Neue" !important;
-  width: 100%;
+  font-size: 16px;
+}
+h1, h2{
+  margin: .67rem 0;
 }
 h1,
 h2,
 p {
+  font-size: 2.4rem;
   text-align: center;
 }
 p span {
@@ -38,8 +42,6 @@ main {
   flex-direction: column;
   color: rgb(212, 8, 234) !important;
   text-shadow: /* White glow */ 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff;
-  height: 100%;
-  width: 45vw;
   margin: 0 auto;
 }
 .del:hover {
@@ -79,10 +81,12 @@ li.todoItem {
 .input-field .prefix.active {
   color: #000;
 }
-
+input {
+  font-size: 1.5rem !important;
+}
 input[type="submit"] {
   height: 30px;
-  background-color: rgb(212, 8, 234);
+  background-color: #8208e6;
   border: solid black 3px;
   margin: 3px;
   color: whitesmoke;
@@ -154,9 +158,9 @@ input[type="submit"] {
 }
 form.addAnotherItem{
 justify-content: center;
-margin-top: auto;
-}
-section{
-  display: flex;
-  justify-content: center;
+margin-top: 5vh;
+display: flex;
+width: 75%  ;
+justify-content: center;
+flex-direction: column;
 }

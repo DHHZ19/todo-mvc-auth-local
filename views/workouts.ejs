@@ -1,12 +1,7 @@
 <%- include('./partials/head.ejs') %> 
     <%- include('./partials/header.ejs') %> 
-    <section>
-      <ul>
-        <li>
-          things
-        </li>
-      </ul>
-    </section>
+    <main>
+      <h1>Save your favorite workouts for future use! </h1>
     <form class="addAnotherItem" action="/todos/ceateExerciseProfile" method="POST">
       <input 
         type="text"
@@ -16,7 +11,8 @@
       <input type="text" placeholder="Workout Item" name="exerciseItem" />
       <input  class="this" type="submit" />
     </form>
-    <input type="button" id="addAnotherItem" value="Add Another Workout">
+    <input type="button" id="addAnotherItem" value="Add Another Workout"> 
+  </main>   
     <script>
       document.querySelector('#addAnotherItem').addEventListener('click', createInput)
       function createInput(){        
