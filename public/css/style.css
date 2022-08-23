@@ -100,10 +100,9 @@ input[type="submit"] {
   width: 20vw;
   font-size: larger;
 }
-/* 
-  Mobile Speficic Query's
-  */
+/* Mobile Speficic Query's*/
 
+/* 950px*/
 @media screen and (max-width: 950px) {
   .button_accept {
     width: 35%;
@@ -112,7 +111,15 @@ input[type="submit"] {
     width: 85vw;
   }
 }
-
+/* > 500*/
+@media screen and (min-width: 500){
+  li.exercise-profile{
+    font-size: smaller;
+  }
+  .todoItem{
+    text-align: center;
+  }
+}
 /* Timer CSS */
 
 .timer {
@@ -163,4 +170,14 @@ display: flex;
 width: 75%  ;
 justify-content: center;
 flex-direction: column;
+}
+@media screen and (max-width: 500px){
+  li.todoItem.exercise-profile{
+    background: none;
+    padding: 0%;
+    font-size: 1.2rem;
+  }
+  .todoItem{
+    text-align: center;
+  }
 }

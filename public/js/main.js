@@ -22,6 +22,7 @@ async function deleteTodo() {
       headers: { "Content-type": "application/json" },
       body: JSON.stringify({
         todoIdFromJSFile: todoId,
+
       }),
     });
     const data = await response.json();

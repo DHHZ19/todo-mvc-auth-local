@@ -18,7 +18,6 @@
    
     <ul>
     <% todos.forEach( el => { %>
-        <% console.log(el) %> 
             <li class='todoItem' data-id='<%=el._id%>'>
                 <span class='<%= el.completed === true ? 'completed' : 'not'%>'><%= el.exercise %></span>
                 <span class="del" > <span class="material-icons">
