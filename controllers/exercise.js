@@ -101,4 +101,14 @@ module.exports = {
       console.log(err);
     }
   },
+  deleteExerciseProfile: async (req, res) => {
+    console.log(req.body.todoIdFromJSFile);
+    try {
+      await ExerciseProfile.findOneAndDelete({ _id: req.body.todoIdFromJSFile });
+      console.log("Delete Exercise Profile");
+      res.json("Deleted It");
+    } catch (err) {
+      console.log(err);
+    }
+  },
 };

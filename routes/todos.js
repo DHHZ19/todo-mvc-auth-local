@@ -15,6 +15,8 @@ router.put("/markIncomplete", todosController.markIncomplete);
 
 router.delete("/deleteTodo", todosController.deleteExercise);
 
+router.delete('/deleteExerciseProfile', todosController.deleteExerciseProfile)
+
 router.post("/ceateExerciseProfile", todosController.createExerciseProfile);
 
 module.exports = router;
