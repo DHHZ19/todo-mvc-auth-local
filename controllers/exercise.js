@@ -4,6 +4,7 @@ module.exports = {
   getExercise: async (req, res) => {
     try {
       const exerciseItems = await Exercise.find({ userId: req.user.id });
+      const exerciseProfileItems = await ExerciseProfile.find({ userId: req.user.id, selected: true});
       const itemsLeft = await Exercise.countDocuments({
         userId: req.user.id,
         completed: false,
@@ -12,6 +13,7 @@ module.exports = {
         todos: exerciseItems,
         left: itemsLeft,
         user: req.user,
+        exerciseProfile: exerciseProfileItems
       });
     } catch (err) {
       console.log(err);
@@ -77,6 +79,7 @@ module.exports = {
         completed: false,
         userId: req.user.id,
         timeForWorkout: req.body.timeForWorkout,
+        selected: false,
       });
       res.redirect('/todos/workouts')
     } catch (error) {
@@ -111,4 +114,29 @@ module.exports = {
       console.log(err);
     }
   },
+  unSelect: async (req,res) => {
+    try {
+      await ExerciseProfile.findByIdAndUpdate({ _id: req.body.todoIdFromJSFile},
+      {
+        completed: false,
+      })
+      console.log('unSelected')
+      res.json("unselected");
+    } catch (error) {
+      
+    }
+  },
+  select : async(req,res) => {
+    console.log('select')
+    try {
+      await ExerciseProfile.findByIdAndUpdate({ _id: req.body.todoIdFromJSFile},
+        {
+          completed: true
+        })
+        console.log('unSelected')
+        res.json("selected");
+    } catch (error) {
+      console.log(error)
+    }
+  }
 };

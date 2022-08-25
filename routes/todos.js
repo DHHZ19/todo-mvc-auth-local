@@ -13,6 +13,10 @@ router.put("/markComplete", todosController.markComplete);
 
 router.put("/markIncomplete", todosController.markIncomplete);
 
+router.put('/unSelect', todosController.unSelect)
+
+router.put('/select', todosController.select)
+
 router.delete("/deleteTodo", todosController.deleteExercise);
 
 router.delete('/deleteExerciseProfile', todosController.deleteExerciseProfile)

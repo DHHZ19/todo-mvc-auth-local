@@ -1,7 +1,15 @@
-// const deleteBtn = document.querySelectorAll(".del");
+const deleteBtn = document.querySelectorAll(".del");
 const todoItem = document.querySelectorAll("span.not");
 const todoComplete = document.querySelectorAll("span.completed");
 const deleteExerciseProf = document.querySelectorAll(".del")
+const selected = document.querySelectorAll('span.non')
+const unselect = document.querySelectorAll('span.selected')
+Array.from(unselect).forEach((el) => {
+  el.addEventListener('click', unSelect)
+})
+Array.from(selected).forEach((el) => {
+  el.addEventListener('click', select)
+})
 Array.from(deleteExerciseProf).forEach((el) => {
   el.addEventListener('click', deleteExerciseProfile)
 })
@@ -87,5 +95,40 @@ async function deleteExerciseProfile() {
     location.reload();
   } catch (err) {
     console.log(err);
+  }
+}
+
+async function unSelect() {
+  console.log('clicked')
+  const id = this.parentNode.dataset.id;
+  try {
+    const response = await fetch("/todos/unSelect",{
+      method: 'put',
+      headers: {"Content-type" : "application/json"},
+      body: JSON.stringify({
+        todoIdFromJSFile : id
+      })
+    })
+    const data = await response.json();
+    location.reload();
+  } catch (error) {
+    console.error(error)
+  }
+}
+async function select() {
+  console.log('clicked')
+  const id = this.parentNode.dataset.id;
+  try {
+    const response = await fetch("/todos/select",{
+      method: 'put',
+      headers: {"Content-type" : "application/json"},
+      body: JSON.stringify({
+        todoIdFromJSFile : id
+      })
+    })
+    const data = await response.json();
+    location.reload();
+  } catch (error) {
+    console.error(error)
   }
 }

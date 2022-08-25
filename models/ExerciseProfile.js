@@ -16,6 +16,9 @@ const ExerciseProfileSchema = new mongoose.Schema({
   timeForWorkout: {
     type: Number,
   },
+  selected: {
+    type: Boolean
+  }
 });
 
 module.exports = mongoose.model("ExerciseProfile", ExerciseProfileSchema);
