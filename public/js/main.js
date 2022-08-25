@@ -2,8 +2,8 @@ const deleteBtn = document.querySelectorAll(".del");
 const todoItem = document.querySelectorAll("span.not");
 const todoComplete = document.querySelectorAll("span.completed");
 const deleteExerciseProf = document.querySelectorAll(".del")
-const selected = document.querySelectorAll('span#selected')
-const unSelected = document.querySelectorAll('span#non')
+const selected = document.querySelectorAll('span.selected')
+const unSelected = document.querySelectorAll('span.non')
 Array.from(unSelected).forEach((el) => {
   el.addEventListener('click', select)
 })
