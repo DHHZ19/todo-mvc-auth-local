@@ -114,24 +114,25 @@ module.exports = {
       console.log(err);
     }
   },
-  unSelect: async (req,res) => {
-    try {
-      await ExerciseProfile.findByIdAndUpdate({ _id: req.body.todoIdFromJSFile},
-      {
-        completed: false,
-      })
-      console.log('unSelected')
-      res.json("unselected");
-    } catch (error) {
-      
-    }
-  },
+    unSelect: async (req,res) => {
+      try {
+        console.log(req.body.todoIdFromJSFile)
+        await ExerciseProfile.findByIdAndUpdate({ _id: req.body.todoIdFromJSFile},
+        {
+          selected: false,
+        })
+        console.log('unSelected')
+        res.json("unselected");
+      } catch (error) {
+        
+      }
+    },
   select : async(req,res) => {
-    console.log('select')
     try {
+      console.log(req.body.todoIdFromJSFile)
       await ExerciseProfile.findByIdAndUpdate({ _id: req.body.todoIdFromJSFile},
         {
-          completed: true
+          selected: true
         })
         console.log('unSelected')
         res.json("selected");
