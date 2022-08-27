@@ -34,9 +34,9 @@
             <% todos.forEach( el => { %>
                 <li class='todoItem' data-id='<%=el._id%>'>
                     <span class='<%= el.completed === true ? 'completed' : 'not'%>'><%= el.exercise %></span>
-                    <span class="del" > <span class="material-icons">
+                    <span class="del" ><span class="material-icons">
                         delete_sweep
-                        </span> </span>
+                    </span></span>
                 </li>
          <% }) %>    
             <% } %>
