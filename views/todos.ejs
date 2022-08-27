@@ -22,7 +22,7 @@
                <% el.exerciseItem.map( exerciseItem => { %>
                  <li class='todoItem' data-id='<%=exerciseItem._id%>'>
                     <span class='<%= exerciseItem.completed === true ? 'completed' : 'not'%>'><%= exerciseItem.exerciseItems %></span>
-                    <span class="del" > <span class="material-icons">
+                    <span class="del" ><span class="material-icons">
                         delete_sweep
                     </span></span>
                 </li>
