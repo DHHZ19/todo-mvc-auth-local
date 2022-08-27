@@ -75,10 +75,8 @@ module.exports = {
     try {
       await ExerciseProfile.create({
         exerciseTitle: req.body.exerciseTitle,
-        exerciseItem: req.body.exerciseItem,
-        completed: false,
+        exerciseItem: Array.isArray(req.body.exerciseItem) ?  req.body.exerciseItem.map(item => ({ exerciseItems: item, completed: false})) : {exerciseItems: req.body.exerciseItem, completed: false},
         userId: req.user.id,
-        timeForWorkout: req.body.timeForWorkout,
         selected: false,
       });
       res.redirect('/todos/workouts')
