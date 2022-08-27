@@ -16,10 +16,6 @@
             </span></button>
     </div>
     <ul>
-        <!--We want to check if a workout profile is selected IF NOT then we display the normal workout page where we add our own workouts 
-        IDEAS: 
-        add selection in DB and check if it exists #1
-        -->
         <% if(exerciseProfile[0]?.selected === true){%>
             <% exerciseProfile.forEach( el => { %>
                 <h5><%= el.exerciseTitle %></h5>

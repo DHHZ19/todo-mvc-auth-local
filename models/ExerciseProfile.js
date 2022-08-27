@@ -3,7 +3,8 @@ const mongoose = require("mongoose");
 const ExerciseProfileSchema = new mongoose.Schema({
   exerciseTitle: { type: String, required: true },
   exerciseItem: [{
-    type: String,
+   exerciseItems: String,
+   completed: false
   }],
   completed: {
     type: Boolean,
