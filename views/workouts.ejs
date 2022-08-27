@@ -7,7 +7,7 @@
             <li class='todoItem exercise-profile' data-id='<%=el._id%>'>
               <span class='<%= el.selected === true ? 'selected fa-solid fa-square-check' : 'non fa-solid fa-square'%>'></span>
               <span class='<%= el.completed === true ? 'completed' : 'not'%>'><%= el.exercise %></span>
-               <%= el.exerciseItem.map(x => x) %>
+               <%= el.exerciseItem.map(exerciseItem => exerciseItem.exerciseItems) %>
                <span class="del" > <span class="material-icons">
                 delete_sweep
                 </span> </span>
